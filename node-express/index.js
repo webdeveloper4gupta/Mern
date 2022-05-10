@@ -20,9 +20,17 @@ app.use(express.static(__dirname + '/public'));//use toset server to serve stati
 // here i used  express router
 
 const dishRouter = require('./routes/dishRouter');
-
+const promoRouter=require('./routes/promoRouter');
+const leaderRouter=require('./routes/leaderRouter')
 app.use('/dishes', dishRouter);
+app.use('/dishes/dishId',dishRouter)
 
+app.use('/promotions',promoRouter)
+app.use('/promotions/promoId',promoRouter)
+
+
+app.use('/leaders',leaderRouter)
+app.use('/leaders/leaderId',leaderRouter)
 // here i call endpoints of rest api
 
 
